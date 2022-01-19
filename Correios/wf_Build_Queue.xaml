@@ -90,7 +90,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[arg_inDicConfig(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[&quot;CEP_&quot;+queue.Item(&quot;CEP&quot;).ToString]">
+            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" ContinueOnError="True" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[arg_inDicConfig(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[&quot;CEP_&quot;+queue.Item(&quot;CEP&quot;).ToString]">
               <ui:AddQueueItem.ItemInformation>
                 <InArgument x:TypeArguments="x:String" x:Key="NOME">
                   <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="queue.Item(&quot;NOME&quot;).ToString" />
