@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="wf_ExtractInfo_IBGE" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="wf_ExtractInfo_IBGE" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="arg_inQeTransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="arg_inDicConfig" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
@@ -95,10 +95,6 @@
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Extrair informações das cidades conforme IBGE." DisplayName="wf_ExtractInfo_IBGE" sap:VirtualizedContainerService.HintSize="242,379" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="var_dtDadosIBGE" />
-      <Variable x:TypeArguments="x:Int32" Name="var_intPopula" />
-    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -116,7 +112,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="[arg_inIntDelayShort]" DisplayName="Texto: Cidade" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="[System.Text.RegularExpressions.Regex.Replace(arg_inQeTransactionItem.SpecificContent(&quot;NOME&quot;).ToString, &quot;(?&gt;/).*&quot;, &quot;&quot; )]">
+      <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="[arg_inIntDelayShort]" DisplayName="Texto: Cidade" sap:VirtualizedContainerService.HintSize="484,154" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="[System.Text.RegularExpressions.Regex.Replace(arg_inQeTransactionItem.SpecificContent(&quot;NOME&quot;).ToString, &quot;(?&gt;/).*&quot;, &quot;&quot; )]">
         <ui:SetValue.Target>
           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1018a63c-07b0-457a-8ccc-168c960d58b8" InformativeScreenshot="68fa3a918cae91a9eb4958c2d6eca607" Selector="&lt;html app='chrome.exe' title='https://cidades.ibge.gov.br' /&gt;&lt;webctrl tag='INPUT' /&gt;">
             <ui:Target.TimeoutMS>
@@ -128,7 +124,7 @@
           </ui:Target>
         </ui:SetValue.Target>
       </ui:SetValue>
-      <ui:UiElementExists DisplayName="Element exists: Resultado item" Exists="[var_boolResultadoPesquisa]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+      <ui:UiElementExists DisplayName="Element exists: Resultado item" Exists="[var_boolResultadoPesquisa]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
         <ui:UiElementExists.Target>
           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fec27f86-ba86-44c0-a896-3746318dd469" InformativeScreenshot="69553a596a7b80f188899062a096f14d" Selector="&lt;html app='chrome.exe' title='https://cidades.ibge.gov.br' /&gt;&lt;webctrl aaname='MG' tag='SPAN' /&gt;" TimeoutMS="[arg_inIntTimeOutShort]">
             <ui:Target.WaitForReady>
@@ -137,11 +133,11 @@
           </ui:Target>
         </ui:UiElementExists.Target>
       </ui:UiElementExists>
-      <If sap2010:Annotation.AnnotationText="Verificar se existe resultado da pesquisa." Condition="[not var_boolResultadoPesquisa]" DisplayName="Condição: Resultado Pesquisa" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="If_1">
+      <If sap2010:Annotation.AnnotationText="Verificar se existe resultado da pesquisa." Condition="[not var_boolResultadoPesquisa]" DisplayName="Condição: Resultado Pesquisa" sap:VirtualizedContainerService.HintSize="484,332" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -165,7 +161,7 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="[arg_inIntDelayShort]" DisplayName="Click: Cidade" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="[arg_inIntDelayShort]" DisplayName="Click: Cidade" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
         <ui:Click.CursorPosition>
           <ui:CursorPosition Position="Center">
             <ui:CursorPosition.OffsetX>
@@ -188,7 +184,10 @@
         </ui:Click.Target>
       </ui:Click>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Capturar as informações necessárias do IBGE." DisplayName="Capturar informações" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence sap2010:Annotation.AnnotationText="Capturar as informações necessárias do IBGE." DisplayName="Capturar informações" sap:VirtualizedContainerService.HintSize="473,1289" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Int32" Name="var_intPopula" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>

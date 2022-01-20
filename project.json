@@ -40,44 +40,7 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "6eef7a51-775a-4ed9-b9f8-3b022e8103d8",
-        "dataVariationFilePath": ".variations\\Tests_Tests.json",
-        "fileName": "Tests\\GeneralTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "e9ab6e78-169c-4683-bb90-1efa4d0b06e9",
-        "fileName": "Tests\\GetTransactionDataTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "12c1b06f-0c9e-4e28-bb89-ed4ed4a5778b",
-        "fileName": "Tests\\InitAllApplicationsTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "5ae9297b-27d2-4ff1-be41-5099f7c85b0b",
-        "fileName": "Tests\\InitAllSettingsTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "41ea17ad-a63c-4e3a-b229-8f12da863d12",
-        "fileName": "Tests\\MainTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "5090b725-4f9f-45d5-beff-8ebd3c4787ee",
-        "fileName": "Tests\\ProcessTestCase.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "f859d237-dfb1-4a08-be7d-ac2af8114da1",
-        "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
-      }
-    ],
+    "fileInfoCollection": [],
     "modernBehavior": true
   },
   "expressionLanguage": "VisualBasic",
